@@ -1,5 +1,5 @@
 ---
 # file: site.yml
+- include: dbservers.yml
 - include: webservers.yml
 - include: appservers.yml
-- include: dbservers.yml
