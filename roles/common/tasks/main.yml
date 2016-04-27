@@ -2,3 +2,5 @@
   # This role contains common plays that will run on all nodes
 
 - include: ubuntu.yml
+
+- include: ufw.yml
