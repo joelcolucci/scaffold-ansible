@@ -1,6 +1,18 @@
 ---
   # Playbook to install application dependencies
 
+
+- name: ensure postgres/psycopg2 packages are installed so we can connect to db
+  apt: name={{ item }}
+  become: yes
+  become_method: sudo
+  with_items:
+    - libpq-dev
+    - python-psycopg2
+    - postgresql-client
+    - postgresql-client-common
+
+
 - name: Install virtualenv and dependencies
   pip:
     requirements: "{{ app_dir }}/requirements.txt"
