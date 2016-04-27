@@ -1,0 +1,12 @@
+---
+  # Open default port for postgres: port 5432
+
+- name: UFW open postgres port
+  ufw: rule=allow port=5432
+  become: yes
+  become_method: sudo
+
+- name: UFW enable firewall
+  ufw: state=enabled
+  become: yes
+  become_method: sudo
