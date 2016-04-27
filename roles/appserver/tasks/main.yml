@@ -6,3 +6,5 @@
 - include: dependencies.yml
 
 - include: wsgi.yml
+
+- include: aws.yml

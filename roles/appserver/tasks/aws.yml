@@ -1,0 +1,23 @@
+---
+  # Tasks to set up access to AWS
+
+- name: Create AWS config directory if it does not exist
+  file: path={{ aws_config_dir }} state=directory
+  become: yes
+  become_method: sudo
+
+
+- name: Write AWS config file
+  template:
+    src: aws_config.j2
+    dest: "{{ aws_config_dir }}/config"
+  become: yes
+  become_method: sudo
+
+
+- name: Write AWS credentials file
+  template:
+    src: aws_credentials.j2
+    dest: "{{ aws_config_dir }}/credentials"
+  become: yes
+  become_method: sudo

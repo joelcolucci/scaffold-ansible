@@ -26,6 +26,7 @@ aws_config_dir: /home/{{ deploy_user }}/.aws
 aws_access_key_id: INSERTCREDSHERE
 aws_secret_access_key: INSERTCREDSHERE
 
+aws_region: us-east-1
 
 # WSGI
 wsgi_server_port: 8000
